@@ -53,55 +53,67 @@ ScreenManager:
             
 
 <SignupScreen>:
-    # name = 'signup'
     MDFloatLayout:
         orientation: 'vertical'
-        spacing: 10
+        spacing: 5
         padding: 30
 
+        MDTopAppBar:
+            title: "Give Blood"
+            type_height: "small"
+            pos_hint: {'center_x':.5, 'center_y':.97}
         Image:
             source: "blood.png"
-            pos_hint:{'center_x':.5, 'center_y':.8}
+            pos_hint:{'center_x':.5, 'center_y':.75}
             size_hint:(.8,.8)
 
         MDTextField:
+            id: username
             hint_text: "Name"
-            fill_color: 0, 0, 0, .4
-            pos_hint: {'center_x':.5, 'center_y':.6}
+            icon_left: "account"
+            pos_hint: {'center_x':.5, 'center_y':.55}
             size_hint:(.8,None)
 
         MDTextField:
+            id: email
+            hint_text: "Email"
+            icon_left: "email"
+            pos_hint: {'center_x':.5, 'center_y':.48}
+            size_hint:(.8,None)
+
+        MDTextField:
+            id: phone
             hint_text: "Phone Number"
-            fill_color: 0, 0, 0, .4
-            pos_hint: {'center_x':.5, 'center_y':.5}
+            icon_left: "phone"
+            pos_hint: {'center_x':.5, 'center_y':.41}
             size_hint:(.8,None)
 
         MDTextField:
+            id: address
             hint_text: "Address"
-            fill_color: 0, 0, 0, .4
-            pos_hint: {'center_x':.5, 'center_y':.4}
+            icon_left: "google-maps"
+            pos_hint: {'center_x':.5, 'center_y':.34}
             size_hint:(.8,None)
 
         MDTextField:
+            id: bg
             hint_text: "Blood Group"
-            fill_color: 0, 0, 0, .4
-            pos_hint: {'center_x':.5, 'center_y':.3}
+            icon_left: "water"
+            pos_hint: {'center_x':.5, 'center_y':.27}
             size_hint:(.8,None)
 
-        # MDCheckbox:
-        #     pos_hint: {'center_x':.13, 'center_y':.2}
-
-        # MDLabel:
-        #     hint_text: "I agree with terms and conditions" 
-        #     pos_hint: {'center_x':.2, 'center_y':.2}
-        #     halign:"center"
-        #     theme_text_color: "Custom"
-        #     text_color: (0,0,1,1)
+        MDTextField:
+            id:password
+            hint_text: "password"
+            icon_left: "lock"
+            pos_hint: {'center_x':.5, 'center_y':.2}
+            size_hint:(.8,None)
 
 
         MDFillRoundFlatButton:
             text: "Register"
             pos_hint: {'center_x':.5, 'center_y':.1}
+            size_hint:(.8,None)
             on_press: root.manager.current = "app"
 
 

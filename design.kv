@@ -1,0 +1,187 @@
+ScreenManager:
+    LoginScreen:
+    SignupScreen:
+    AppScreen:
+
+<LoginScreen>:
+
+    # name = 'login'
+    MDFloatLayout:
+        orientation: 'vertical'
+        spacing: 10
+        padding: 30
+
+        Image:
+            source: "blood.png"
+            pos_hint:{'center_x':.5, 'center_y':.8}
+
+        MDTextField:
+            hint_text: "Username"
+            # mode: "fill"
+            id: username 
+            fill_color: 0, 0, 0, .4
+            pos_hint: {'center_x':.5, 'center_y':.5}
+            size_hint:(.8,None)
+
+        MDTextField:
+            id: password
+            hint_text: "Password"
+            password: True
+            # password_mask: "*"
+            # mode:"rectangle"
+            pos_hint: {'center_x':.5, 'center_y':.4}
+            size_hint:(.8,None)
+
+        MDFillRoundFlatButton:
+            text: "Login"
+            pos_hint: {'center_x':.5, 'center_y':.3}
+            # on_press: app.login()  
+
+        MDLabel:
+            text: "Don't have account"
+            pos_hint: {'center_x':.5, 'center_y':.2}
+            halign: "center"
+            theme_text_color: "Custom"
+            text_color: 220/255, 220/255, 220/255, .7
+                
+        MDTextButton:
+            text:"Create Account"
+            bold: True
+            pos_hint: {'center_x':.5, 'center_y':.16}
+            theme_text_color: "Custom"
+            text_color: (0,0,1,1)
+            on_press: root.manager.current = 'signup'
+            
+
+<SignupScreen>:
+    # name = 'signup'
+    MDFloatLayout:
+        orientation: 'vertical'
+        spacing: 10
+        padding: 30
+
+        Image:
+            source: "blood.png"
+            pos_hint:{'center_x':.5, 'center_y':.8}
+            size_hint:(.8,.8)
+
+        MDTextField:
+            hint_text: "Name"
+            fill_color: 0, 0, 0, .4
+            pos_hint: {'center_x':.5, 'center_y':.6}
+            size_hint:(.8,None)
+
+        MDTextField:
+            hint_text: "Phone Number"
+            fill_color: 0, 0, 0, .4
+            pos_hint: {'center_x':.5, 'center_y':.5}
+            size_hint:(.8,None)
+
+        MDTextField:
+            hint_text: "Address"
+            fill_color: 0, 0, 0, .4
+            pos_hint: {'center_x':.5, 'center_y':.4}
+            size_hint:(.8,None)
+
+        MDTextField:
+            hint_text: "Blood Group"
+            fill_color: 0, 0, 0, .4
+            pos_hint: {'center_x':.5, 'center_y':.3}
+            size_hint:(.8,None)
+
+        # MDCheckbox:
+        #     pos_hint: {'center_x':.13, 'center_y':.2}
+
+        # MDLabel:
+        #     hint_text: "I agree with terms and conditions" 
+        #     pos_hint: {'center_x':.2, 'center_y':.2}
+        #     halign:"center"
+        #     theme_text_color: "Custom"
+        #     text_color: (0,0,1,1)
+
+
+        MDFillRoundFlatButton:
+            text: "Register"
+            pos_hint: {'center_x':.5, 'center_y':.1}
+            on_press: root.manager.current = "app"
+
+
+<AppScreen>:
+    MDBoxLayout:
+        orientation: "vertical"
+
+        MDTopAppBar:
+            title: "Give Blood"
+            type_height: "small"
+
+
+    # MDBottomAppBar:
+    #     title: 'Bottom navigation'
+    #     md_bg_color: .2, .2, .2, 1
+    #     specific_text_color: 1, 1, 1, 1
+
+        MDBottomNavigation:
+            panel_color: .2, .2, .2, 1
+
+            MDBottomNavigationItem:
+                name: 'screen 1'
+                icon: 'home'
+                text: "Home"
+
+                MDLabel:
+                    text: 'Statitisics info goes here'
+                    halign: 'center'
+
+
+  
+            MDBottomNavigationItem:
+                name: 'screen 2'
+                text: 'Donor'
+                icon: 'wifi'
+
+                ScrollView:
+                    MDList:
+                        ThreeLineListItem:
+                            text: "Mehrab Hossain"
+                            secondary_text: "Blood Group: O(+ve)"
+                            tertiary_text: "Phone: 01761072343"
+                        ThreeLineListItem:
+                            text: "Zoti Akter"
+                            secondary_text: "Blood Group: O(+ve)"
+                            tertiary_text: "Phone: 01761072343"
+                        ThreeLineListItem:
+                            text: "Mehrab "
+                            secondary_text: "Blood Group: O(+ve)"
+                            tertiary_text: "Phone: 01761072343"
+                        ThreeLineListItem:
+                            text: "Mehrab Hossain"
+                            secondary_text: "Blood Group: O(+ve)"
+                            tertiary_text: "Phone: 01761072343"  
+
+            MDBottomNavigationItem:
+                name: 'screen 3'
+                text: 'Donate'
+                icon: 'water'
+
+                MDLabel:
+                    text: 'Donation form'
+                    halign: 'center'
+
+            MDBottomNavigationItem:
+                name: 'screen 4'
+                text: "Request"
+                icon: 'hand-heart'
+
+                MDLabel:
+                    text: 'patient info goes here'
+                    halign: 'center'
+                    
+            MDBottomNavigationItem:
+                name: 'screen 5'
+                text: "Profile"
+                icon: 'account'
+
+                MDLabel:
+                    text: 'Profile info goes here'
+                    halign: 'center'
+

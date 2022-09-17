@@ -114,7 +114,9 @@ ScreenManager:
             text: "Register"
             pos_hint: {'center_x':.5, 'center_y':.1}
             size_hint:(.8,None)
-            on_press: root.manager.current = "app"
+            on_press: 
+                root.manager.transition.duration=0
+                root.manager.current = "app"
 
 
 <AppScreen>:
@@ -125,19 +127,17 @@ ScreenManager:
             title: "Give Blood"
             type_height: "small"
 
-
-    # MDBottomAppBar:
-    #     title: 'Bottom navigation'
-    #     md_bg_color: .2, .2, .2, 1
-    #     specific_text_color: 1, 1, 1, 1
-
         MDBottomNavigation:
-            panel_color: .2, .2, .2, 1
+            panel_color: app.theme_cls.primary_color
+            text_color_inactive: 245/255, 245/255, 245/255
+            text_color_active: 245/255, 245/255, 245/255
 
             MDBottomNavigationItem:
                 name: 'screen 1'
                 icon: 'home'
+                icon_color: 1,1,1,1
                 text: "Home"
+                on_tab_release: print("ok")
 
                 MDLabel:
                     text: 'Statitisics info goes here'

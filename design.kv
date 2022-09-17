@@ -5,7 +5,6 @@ ScreenManager:
 
 <LoginScreen>:
 
-    # name = 'login'
     MDFloatLayout:
         orientation: 'vertical'
         spacing: 10
@@ -16,10 +15,10 @@ ScreenManager:
             pos_hint:{'center_x':.5, 'center_y':.8}
 
         MDTextField:
-            hint_text: "Username"
-            # mode: "fill"
-            id: username 
-            fill_color: 0, 0, 0, .4
+            id: email
+            hint_text: "Email"
+            # color_mode: 'custom'
+            # line_color_focus: 0, 1, 0, 1
             pos_hint: {'center_x':.5, 'center_y':.5}
             size_hint:(.8,None)
 
@@ -27,29 +26,31 @@ ScreenManager:
             id: password
             hint_text: "Password"
             password: True
-            # password_mask: "*"
-            # mode:"rectangle"
+            # color_mode: 'custom'
+            # line_color_focus: 0, 1, 0, 1
             pos_hint: {'center_x':.5, 'center_y':.4}
             size_hint:(.8,None)
 
         MDFillRoundFlatButton:
             text: "Login"
             pos_hint: {'center_x':.5, 'center_y':.3}
+            size_hint:(.8, None)
+            md_bg_color: 255/255, 99/255, 71/255, 1
             # on_press: app.login()  
 
         MDLabel:
             text: "Don't have account"
-            pos_hint: {'center_x':.5, 'center_y':.2}
+            pos_hint: {'center_x':.5, 'center_y':.18}
             halign: "center"
             theme_text_color: "Custom"
-            text_color: 220/255, 220/255, 220/255, .7
+            text_color: 56/255, 60/255, 59/255, .8
                 
         MDTextButton:
             text:"Create Account"
             bold: True
-            pos_hint: {'center_x':.5, 'center_y':.16}
+            pos_hint: {'center_x':.5, 'center_y':.14}
             theme_text_color: "Custom"
-            text_color: (0,0,1,1)
+            text_color: 58/255, 134/255, 255/255, 1
             on_press: root.manager.current = 'signup'
             
 

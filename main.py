@@ -26,8 +26,9 @@ class BloodBank(MDApp):
         sm.add_widget(AppScreen(name="app"))
         return sm
 
-    def login(self):
-        # print(self.root.ids.password.text)
-        pass
+    # def login(self):
+    #     login_screen = self.root.get_screen('login')
+    #     print(login_screen.ids.email.text)
+        
 
 BloodBank().run()

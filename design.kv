@@ -4,7 +4,7 @@ ScreenManager:
     AppScreen:
 
 <LoginScreen>:
-
+    name:"login"
     MDFloatLayout:
         orientation: 'vertical'
         spacing: 10
@@ -34,7 +34,7 @@ ScreenManager:
             pos_hint: {'center_x':.5, 'center_y':.3}
             size_hint:(.8, None)
             md_bg_color: 255/255, 99/255, 71/255, 1
-            # on_press: app.login()  
+            on_press: app.login()
 
         MDLabel:
             text: "Don't have account"
@@ -53,6 +53,7 @@ ScreenManager:
             
 
 <SignupScreen>:
+    name:"signup"
     MDFloatLayout:
         orientation: 'vertical'
         spacing: 5
@@ -114,12 +115,13 @@ ScreenManager:
             text: "Register"
             pos_hint: {'center_x':.5, 'center_y':.1}
             size_hint:(.8,None)
-            on_press: 
-                root.manager.transition.duration=0
-                root.manager.current = "app"
-
+            # on_press: 
+            #     root.manager.transition.duration=0
+            #     root.manager.current = "app"
+            on_press: app.login()
 
 <AppScreen>:
+    name: "app"
     MDBoxLayout:
         orientation: "vertical"
 
@@ -128,9 +130,9 @@ ScreenManager:
             type_height: "small"
 
         MDBottomNavigation:
-            panel_color: app.theme_cls.primary_color
-            text_color_inactive: 245/255, 245/255, 245/255
-            text_color_active: 245/255, 245/255, 245/255
+            panel_color: "#eeeaea"
+            # text_color_inactive: 245/255, 245/255, 245/255
+            # text_color_active: 245/255, 245/255, 245/255
 
             MDBottomNavigationItem:
                 name: 'screen 1'

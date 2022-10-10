@@ -61,20 +61,36 @@ class SignupScreen(Screen):
                         self.address.text, self.bg.text, self.password.text]],
                         columns = ['Name', 'Email', 'Phone', 'Address', 'BG', 'Password'])
 
-        # if self.email.text != "" and self.password.text !="":
-        #     if self.email.text not in user_info['Email'].unique():
+        if self.email.text != "" and self.password.text !="":
+            if self.email.text not in user_info['Email'].unique():
 
                 # if email does not exist already then append to the csv file
                 # change current screen to log in the user now
-        user_info.to_csv('users.csv', mode = 'a', header = False, index = False)
-        self.username.text = ""
-        self.email.text = ""
-        self.phone.text = ""
-        self.address.text = ""
-        self.bg.text = ""
-        self.password.text = ""
-        self.parent.current = 'login'
+                user_info.to_csv('users.csv', mode = 'a', header = False, index = False)
+                self.username.text = ""
+                self.email.text = ""
+                self.phone.text = ""
+                self.address.text = ""
+                self.bg.text = ""
+                self.password.text = ""
+                self.parent.current = 'login'
+            else:
+                n = self.parent.get_screen("signup")
+                n.show_alert_dialog()
+                self.username.text = ""
+                self.email.text = ""
+                self.phone.text = ""
+                self.address.text = ""
+                self.bg.text = ""
+                self.password.text = ""
+                self.parent.current = "login"
 
+    def show_alert_dialog(self):
+
+        self.dialog = MDDialog(
+            text= self.email.text + " already exits",
+        )
+        self.dialog.open()
 
 class AppScreen(Screen):
     pass

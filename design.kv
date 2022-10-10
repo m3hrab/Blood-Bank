@@ -5,6 +5,8 @@ ScreenManager:
 
 <LoginScreen>:
     name:"login"
+    email: email
+    password: password
     MDFloatLayout:
         orientation: 'vertical'
         spacing: 10
@@ -34,7 +36,7 @@ ScreenManager:
             pos_hint: {'center_x':.5, 'center_y':.3}
             size_hint:(.8, None)
             md_bg_color: 255/255, 99/255, 71/255, 1
-            on_press: app.login()
+            on_press: root.validation()
 
         MDLabel:
             text: "Don't have account"

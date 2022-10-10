@@ -35,6 +35,7 @@ class LoginScreen(Screen):
             n.show_alert_dialog(msg)
 
     def show_alert_dialog(self, msg):
+
         if msg=="":
             self.dialog = MDDialog(
                 text="Enter the email and password correctly",
@@ -47,7 +48,33 @@ class LoginScreen(Screen):
         
 
 class SignupScreen(Screen):
-    pass 
+    username = ObjectProperty(None)
+    email = ObjectProperty(None)
+    phone = ObjectProperty(None)
+    address = ObjectProperty(None)
+    bg = ObjectProperty(None)
+    password = ObjectProperty(None)
+
+    def registerbtn(self):
+        # creating the Dataframe 
+        user_info = pd.DataFrame([[self.username.text, self.email.text, self.phone.text,
+                        self.address.text, self.bg.text, self.password.text]],
+                        columns = ['Name', 'Email', 'Phone', 'Address', 'BG', 'Password'])
+
+        # if self.email.text != "" and self.password.text !="":
+        #     if self.email.text not in user_info['Email'].unique():
+
+                # if email does not exist already then append to the csv file
+                # change current screen to log in the user now
+        user_info.to_csv('users.csv', mode = 'a', header = False, index = False)
+        self.username.text = ""
+        self.email.text = ""
+        self.phone.text = ""
+        self.address.text = ""
+        self.bg.text = ""
+        self.password.text = ""
+        self.parent.current = 'login'
+
 
 class AppScreen(Screen):
     pass

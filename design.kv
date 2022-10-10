@@ -56,6 +56,12 @@ ScreenManager:
 
 <SignupScreen>:
     name:"signup"
+    username: username
+    email: email
+    phone: phone 
+    address:address
+    bg: bg
+    password: password
     MDFloatLayout:
         orientation: 'vertical'
         spacing: 5
@@ -117,10 +123,9 @@ ScreenManager:
             text: "Register"
             pos_hint: {'center_x':.5, 'center_y':.1}
             size_hint:(.8,None)
-            # on_press: 
-            #     root.manager.transition.duration=0
-            #     root.manager.current = "app"
-            on_press: app.login()
+            on_press: 
+                root.registerbtn()
+            # on_press: app.login()
 
 <AppScreen>:
     name: "app"

@@ -85,6 +85,7 @@ class BloodBank(MDApp):
         sm.add_widget(SignupScreen())
         sm.add_widget(AppScreen())
         return sm
+        
 
 
 BloodBank().run()

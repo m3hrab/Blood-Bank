@@ -148,9 +148,48 @@ ScreenManager:
                 text: "Home"
                 on_tab_release: print("ok")
 
-                MDLabel:
-                    text: 'Statitisics info goes here'
-                    halign: 'center'
+                MDFloatLayout:
+                    MDSmartTile:
+                        radius: 24
+                        box_radius: [0, 0, 24, 24]
+                        box_color: 1, 1, 1, .2
+                        source: "share.jpg"
+                        pos_hint: {"center_x": .5, "center_y": .75}
+                        size_hint: None, None
+                        size: "310dp", "240dp"
+
+                        MDIconButton:
+                            icon: "heart-outline"
+                            theme_icon_color: "Custom"
+                            icon_color: 1, 0, 0, 1
+                            pos_hint: {"center_y": .5}
+                            on_release: self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+
+                        MDLabel:
+                            text: "Total Blood Donors: 20"
+                            bold: True
+                            color: 1, 0, 0, 1
+
+                    MDSmartTile:
+                        radius: 24
+                        box_radius: [0, 0, 24, 24]
+                        box_color: 1, 1, 1, .2
+                        source: "bld.jpg"
+                        pos_hint: {"center_x": .5, "center_y": .28}
+                        size_hint: None, None
+                        size: "310dp", "240dp"
+
+                        MDIconButton:
+                            icon: "heart-outline"
+                            theme_icon_color: "Custom"
+                            icon_color: 1, 0, 0, 1
+                            pos_hint: {"center_y": .5}
+                            on_release: self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+
+                        MDLabel:
+                            text: "Totals Blood Requests: 04"
+                            bold: True
+                            color: 1, 0, 0, 1
 
 
   
@@ -159,81 +198,127 @@ ScreenManager:
                 text: 'Donor'
                 icon: 'wifi'
 
-                ScrollView:
-                    MDList:
-                        ThreeLineListItem:
-                            text: "Mst. Zoti Akter"
-                            secondary_text: "Blood Group: O(+ve)"
-                            tertiary_text: "Phone: 01761072343"
-                        ThreeLineListItem:
-                            text: "Sampa Akter"
-                            secondary_text: "Blood Group: O(+ve)"
-                            tertiary_text: "Phone: 01761072444"
-                        ThreeLineListItem:
-                            text: "Md Sumon Islam"
-                            secondary_text: "Blood Group: O(+ve)"
-                            tertiary_text: "Phone: 01711172442"
-                        ThreeLineListItem:
-                            text: "Joti akter"
-                            secondary_text: "Blood Group: O(+ve)"
-                            tertiary_text: "Phone: 0176102503"  
-                        ThreeLineListItem:
-                            text: "Mst. Zoti Akter"
-                            secondary_text: "Blood Group: O(+ve)"
-                            tertiary_text: "Phone: 01761072343"
-                        ThreeLineListItem:
-                            text: "Sampa Akter"
-                            secondary_text: "Blood Group: O(+ve)"
-                            tertiary_text: "Phone: 01761072444"
-                        ThreeLineListItem:
-                            text: "Md Sumon Islam"
-                            secondary_text: "Blood Group: O(+ve)"
-                            tertiary_text: "Phone: 01711172442"
-                        ThreeLineListItem:
-                            text: "Joti akter"
-                            secondary_text: "Blood Group: O(+ve)"
-                            tertiary_text: "Phone: 0176102503"  
-                        ThreeLineListItem:
-                            text: "Mst. Zoti Akter"
-                            secondary_text: "Blood Group: O(+ve)"
-                            tertiary_text: "Phone: 01761072343"
-                        ThreeLineListItem:
-                            text: "Sampa Akter"
-                            secondary_text: "Blood Group: O(+ve)"
-                            tertiary_text: "Phone: 01761072444"
-                        ThreeLineListItem:
-                            text: "Md Sumon Islam"
-                            secondary_text: "Blood Group: O(+ve)"
-                            tertiary_text: "Phone: 01711172442"
-                        ThreeLineListItem:
-                            text: "Joti akter"
-                            secondary_text: "Blood Group: O(+ve)"
-                            tertiary_text: "Phone: 0176102503"  
-                        ThreeLineListItem:
-                            text: "Mst. Zoti Akter"
-                            secondary_text: "Blood Group: O(+ve)"
-                            tertiary_text: "Phone: 01761072343"
-                        ThreeLineListItem:
-                            text: "Sampa Akter"
-                            secondary_text: "Blood Group: O(+ve)"
-                            tertiary_text: "Phone: 01761072444"
-                        ThreeLineListItem:
-                            text: "Md Sumon Islam"
-                            secondary_text: "Blood Group: O(+ve)"
-                            tertiary_text: "Phone: 01711172442"
-                        ThreeLineListItem:
-                            text: "Joti akter"
-                            secondary_text: "Blood Group: O(+ve)"
-                            tertiary_text: "Phone: 0176102503"  
+                MDFloatLayout:
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "8dp"
+                        size_hint: .9, None
+                        pos_hint: {"center_x": .5, "center_y": .9}
+
+                        MDLabel:
+                            text: "Mst Zoti Akter"
+                        MDLabel:
+                            text: "Blood Group: O(+)"
+                            theme_text_color: "Secondary" 
+                        MDLabel:
+                            text:"Address: DUET, Gazipur"
+                            theme_text_color: "Secondary" 
+                        MDLabel:
+                            text:"Phone:01725896324"      
+                            theme_text_color: "Secondary"
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "8dp"
+                        size_hint: .9, None
+                        pos_hint: {"center_x": .5, "center_y": .7}
+
+                        MDLabel:
+                            text: "Mst Sampa Akter"
+                        MDLabel:
+                            text: "Blood Group: O(+)"
+                            theme_text_color: "Secondary" 
+                        MDLabel:
+                            text:"Address: DUET, Gazipur"
+                            theme_text_color: "Secondary" 
+                        MDLabel:
+                            text:"Phone:01725896324"      
+                            theme_text_color: "Secondary"
+
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "8dp"
+                        size_hint: .9, None
+                        pos_hint: {"center_x": .5, "center_y": .5}
+
+                        MDLabel:
+                            text: "Mst Sonia Akter"
+                        MDLabel:
+                            text: "Blood Group: O(+)"
+                            theme_text_color: "Secondary" 
+                        MDLabel:
+                            text:"Address: DUET, Gazipur"
+                            theme_text_color: "Secondary" 
+                        MDLabel:
+                            text:"Phone:01725896324"      
+                            theme_text_color: "Secondary"
+
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "8dp"
+                        size_hint: .9, None
+                        pos_hint: {"center_x": .5, "center_y": .3}
+
+                        MDLabel:
+                            text: "Mst Zoti Akter"
+                        MDLabel:
+                            text: "Blood Group: O(+)"
+                            theme_text_color: "Secondary" 
+                        MDLabel:
+                            text:"Address: DUET, Gazipur"
+                            theme_text_color: "Secondary" 
+                        MDLabel:
+                            text:"Phone:01725896324"      
+                            theme_text_color: "Secondary"
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "8dp"
+                        size_hint: .9, None
+                        pos_hint: {"center_x": .5, "center_y": .1}
+
+                        MDLabel:
+                            text: "Mst Sampa Akter"
+                        MDLabel:
+                            text: "Blood Group: O(+)"
+                            theme_text_color: "Secondary" 
+                        MDLabel:
+                            text:"Address: DUET, Gazipur"
+                            theme_text_color: "Secondary" 
+                        MDLabel:
+                            text:"Phone:01725896324"      
+                            theme_text_color: "Secondary"
 
             MDBottomNavigationItem:
                 name: 'screen 3'
                 text: 'Donate'
                 icon: 'water'
 
-                MDLabel:
-                    text: 'Donation form'
-                    halign: 'center'
+                MDFloatLayout:
+                    MDTextField:
+                        id: location
+                        hint_text: "Location"
+                        icon_left: "google-maps"
+                        pos_hint: {'center_x':.5, 'center_y':.7}
+                        size_hint:(.8,None)
+
+                    MDTextField:
+                        icon_left: "hand-heart"
+                        id: blood_number
+                        hint_text: "Number of Blood Bags"
+                        pos_hint: {'center_x':.5, 'center_y':.6}
+                        size_hint:(.8,None)
+
+                    MDTextField:
+                        icon_left: "water"
+                        id: availablity
+                        hint_text: "Availablity (Date)"
+                        pos_hint: {'center_x':.5, 'center_y':.5}
+                        size_hint:(.8,None)
+
+                    
+                    MDFillRoundFlatButton:
+                        text: "Submit"
+                        pos_hint: {'center_x':.5, 'center_y':.4}
+                        size_hint:(.8,None)        
 
             MDBottomNavigationItem:
                 name: 'screen 4'

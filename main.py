@@ -74,7 +74,7 @@ class SignupScreen(Screen):
 class AppScreen(Screen):
     pass
 
-class BloodBank(MDApp):
+class ConnectByBlood(MDApp):
 
     def build(self):
         Builder.load_file("design.kv")
@@ -88,4 +88,4 @@ class BloodBank(MDApp):
         
 
 
-BloodBank().run()
+ConnectByBlood().run()

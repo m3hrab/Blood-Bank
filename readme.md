@@ -1,6 +1,7 @@
 # Connect by Blood
 
 > An Android, iOS and Desktop Application
+> [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
 ## Language
 
@@ -19,4 +20,4 @@
 
 ![login](https://github.com/m3hrab/Blood-Bank/blob/main/images/home.png?raw=true)![signup](https://github.com/m3hrab/Blood-Bank/blob/main/images/donate.png?raw=true)
 
-![login](https://github.com/m3hrab/Blood-Bank/blob/main/images/donor.png?raw=true)![signup](https://github.com/m3hrab/Blood-Bank/blob/main/images/request.png?raw=true)
+![login](https://github.com/m3hrab/Blood-Bank/blob/main/images/donors.png?raw=true)![signup](https://github.com/m3hrab/Blood-Bank/blob/main/images/request.png?raw=true)
